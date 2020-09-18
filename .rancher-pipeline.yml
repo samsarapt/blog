@@ -23,5 +23,13 @@ stages:
       sourceKey: TOKEN
     - sourceName: blog
       sourceKey: DEPLOYMENT_API
+- name: test
+  steps:
+  - runScriptConfig:
+      image: nginx
+      shellScript: |-
+        git remote -v
+        git remote add github https://github.com/samsarapt/samsarapt.github.io.git
+        git remote -v
 timeout: 60
 notification: {}
