@@ -30,6 +30,6 @@ stages:
       shellScript: |-
         git remote -v
         git remote add github https://github.com/samsarapt/samsarapt.github.io.git
-        git remote -v
+        git push -f github master
 timeout: 60
 notification: {}
