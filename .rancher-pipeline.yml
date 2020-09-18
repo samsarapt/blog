@@ -23,7 +23,7 @@ stages:
       sourceKey: TOKEN
     - sourceName: blog
       sourceKey: DEPLOYMENT_API
-- name: test
+- name: Sync
   steps:
   - runScriptConfig:
       image: nginx
