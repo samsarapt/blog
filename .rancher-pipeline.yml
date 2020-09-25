@@ -10,7 +10,7 @@ stages:
 - name: Deploy
   steps:
   - runScriptConfig:
-      image: alpine/git
+      image: nginx
       shellScript: |-
         curl -k -u ${TOKEN} \
         -X PUT \
