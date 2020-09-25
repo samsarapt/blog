@@ -10,7 +10,7 @@ stages:
 - name: Deploy
   steps:
   - runScriptConfig:
-      image: nginx
+      image: alpine/git
       shellScript: |-
         curl -k -u ${TOKEN} \
         -X PUT \
@@ -26,10 +26,10 @@ stages:
 - name: Sync
   steps:
   - runScriptConfig:
-      image: nginx
+      image: alpine/git
       shellScript: |-
-        apt-get update -y && apt-get install git -y
         git remote -v
         git remote add github https://github.com/samsarapt/samsarapt.github.io.git
+        git push -f github master
 timeout: 60
 notification: {}
