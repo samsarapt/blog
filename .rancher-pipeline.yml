@@ -19,9 +19,9 @@ stages:
         -d '{"containers":[{"image":"ccr.ccs.tencentyun.com/my-image/blog:'${CICD_EXECUTION_SEQUENCE}'","name":"blog"}]}' \
         "${DEPLOYMENT_API}"
     envFrom:
-    - sourceName: token
+    - sourceName: deploy
       sourceKey: TOKEN
-    - sourceName: blog
+    - sourceName: deploy
       sourceKey: DEPLOYMENT_API
 - name: Sync
   steps:
@@ -30,6 +30,5 @@ stages:
       shellScript: |-
         git remote -v
         git remote add github https://github.com/samsarapt/samsarapt.github.io.git
-        git push -f github master
 timeout: 60
 notification: {}
