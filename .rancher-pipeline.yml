@@ -28,6 +28,7 @@ stages:
   - runScriptConfig:
       image: nginx
       shellScript: |-
+        apt-get install git -y
         git remote -v
         git remote add github https://github.com/samsarapt/samsarapt.github.io.git
 timeout: 60
