@@ -29,7 +29,7 @@ stages:
       image: alpine/git
       shellScript: |-
         git remote -v
-        git remote add github https://github.com/samsarapt/samsarapt.github.io.git
+        git remote add github ssh://git@github.com/samsarapt/samsarapt.github.io.git
         git push -f github master
 timeout: 60
 notification: {}
